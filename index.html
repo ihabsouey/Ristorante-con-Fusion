@@ -220,7 +220,7 @@
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid" src="img/buffet.png" alt="buffet">
-                            <div class="carousel-caption d-none d-md-block">
+                            <div class="carousel-caption d-none d-md-block offset-sm-3">
                                 <h2>Weekend Grand Buffet <span class="badge badge-danger">New</span></h2>
                                 <p>Featuring mouthwatering combinations with a choice of five different salads, six
                                     enticing
@@ -234,7 +234,7 @@
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid" src="img/alberto.png" alt="Alberto Somayya">
-                            <div class="carousel-caption d-none d-md-block ">
+                            <div class="carousel-caption d-none d-md-block offset-sm-3">
                                 <h4>Executive Chef</h4>
                                 <p class="d-none d-sm-block  ">Award winning three-star Michelin chef with wide
                                     International experience having worked closely with
@@ -257,6 +257,14 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm "id="carousel-pause">
+                            <span class="fa fa-pause"></span>
+                        </button>
+                        <button class="btn btn-danger btn-sm "id="carousel-play">
+                            <span class="fa fa-play"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -322,35 +330,7 @@
             </div>
 
         </div>
-        <div class="row row-content">
-            <div class="card col-sm-8 offset-sm-2 " style="padding: 0">
-                <div class="card-header bg-warning">
-                    <h2 style="color:white">Reserve a Table </h2>
-                </div>
-                <div class="card-body">
-                    <form id="form1">
-                        <div class="form-group row ">
-
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2"> Date and Time</label>
-                            <div class="col-md-3">
-                                <input type="text" class="form-control" id="date" name="date" placeholder="Date">
-                            </div>
-                            <div class="col-md-3">
-                                <input type="text" class="form-control" id="Time" name="Time" placeholder="Time">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-md-2 offset-md-2">
-                                <input type="button" class="btn btn-primary" id="btn" name="btn" value="Reserve">
-                            </div>
-
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
     <footer class="footer">
@@ -403,6 +383,18 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#mycarousel').carousel({interval:2000});
+            $('#carousel-pause').click(function () {
+                $('#mycarousel').carousel('pause');
+            });
+            $('#carousel-play').click(function () {
+                $('#mycarousel').carousel('cycle');
+            });
+        })
+        
+    </script>
     
 </body>
 
